@@ -1,1 +1,1 @@
-<p>Training project at HTMLAcademy</p>
+<p>Учебный проект Barbershop</p>
