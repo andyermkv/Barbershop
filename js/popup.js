@@ -7,12 +7,13 @@
 		var form = popup.querySelector("form");
 		var password = popup.querySelector("[name=password]");
 		var storage = localStorage.getItem("login");
+		var overlay = document.querySelector(".modal-overlay");
 		
 		link.addEventListener("click", function(event) {
 			event.preventDefault();
 			popup.classList.add("modal-content-show");
 			login.focus();
-			
+			document.classList.add("modal-overlay");
 			if (storage) {
 				login.value = storage;
 				password.focus();
@@ -24,7 +25,8 @@
 		close.addEventListener("click", function(event) {
 			event.preventDefault();
 			popup.classList.remove("modal-content-show");
-			popup.classList.remove("modal-error")
+			popup.classList.remove("modal-error");
+			document.classList.remove("modal-overlay");
 		});
 		
 		form.addEventListener("submit", function(event){
@@ -48,7 +50,7 @@
 
 		var mapOpen = document.querySelector(".js-open-map");
 		var mapPopup = document.querySelector(".modal-content-map");
-		var mapClose = popup.querySelector(".modal-content-close");
+		var mapClose = mapPopup.querySelector(".modal-content-close");
 		
 		mapOpen.addEventListener("click", function(event) {
 			event.preventDefault();
